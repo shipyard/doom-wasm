@@ -4,5 +4,8 @@ services:
   doom:
     build:
       context: '.'
+    volumes:
+      - './:/srv'
+    command: '/srv/entrypoint.sh'
     ports:
       - '8000:8000'
