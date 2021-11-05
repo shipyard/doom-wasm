@@ -2,6 +2,8 @@ version: '3.4'
 
 services:
   doom:
+    labels: 
+      shipyard.route: '/'
     build:
       context: '.'
     volumes:
