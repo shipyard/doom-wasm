@@ -2,12 +2,8 @@ version: '3.4'
 
 services:
   doom:
+    image: 'elliottking/doom-wasm:0.1.0'
     labels: 
       shipyard.route: '/'
-    build:
-      context: '.'
-    volumes:
-      - './:/srv'
-    command: '/srv/entrypoint.sh'
     ports:
       - '8000:8000'
