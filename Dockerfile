@@ -28,8 +28,13 @@ RUN apt update -qqy && apt install -qqy \
 
 ADD . ./
 
-# Get DOOM wad file
+# Get original DOOM wad file
 RUN wget https://distro.ibiblio.org/slitaz/sources/packages/d/doom1.wad && \
     mv doom1.wad ./src/
+
+# Freedoom wad file
+# RUN wget https://github.com/freedoom/freedoom/releases/download/v0.12.1/freedoom-0.12.1.zip && \
+#     unzip freedoom-0.12.1.zip && \
+#     cp freedoom-0.12.1/freedoom1.wad ./src/doom1.wad
 
 CMD cd src && python -m SimpleHTTPServer
