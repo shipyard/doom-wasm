@@ -101,6 +101,27 @@
                 };
             };
         </script>
+        <script>
+            // If in an iframe we want to focus this so that keyevents will work.
+            // Adapted from:
+            // https://stackoverflow.com/a/326076/7163811
+            // https://itch.io/t/153385/handle-arrow-keys-inside-iframe
+            function inIframe () {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
+            if (inIframe()) {
+                window.addEventListener('mousedown', function(evt) {
+                        window.focus();
+                        evt.preventDefault();
+                        evt.stopPropagation();
+                        evt.target.style.cursor = 'default';
+                    }, false);
+            }
+        </script>
         <script type="text/javascript" src="websockets-doom.js"></script>
     </body>
 </html>

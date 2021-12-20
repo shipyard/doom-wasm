@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   doom:
-    image: 'elliottking/doom-wasm:0.1.0'
+    image: 'elliottking/doom-wasm:0.1.1'
     labels: 
       shipyard.route: '/'
     ports:
