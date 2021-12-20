@@ -2,7 +2,10 @@
 
 This is a [Chocolate Doom][1] WebAssembly port with WebSockets [support][4].
 
-## Requirements
+## Running with Docker
+This fork can be run with [Docker and Docker Compose](https://www.docker.com/products/docker-desktop). If in the root directory, you can simply run `docker-compose up` to use our existing image. If you wish to build and run your own image, you can run `docker build .` then `docker run -p 8000:8000 [sha from previous step]`.
+## Running manually
+### Requirements
 
 You need to install Emscripten and a few other tools first:
 
@@ -12,7 +15,7 @@ brew install automake
 brew install sdl2 sdl2_mixer sdl2_net
 ```
 
-## Compiling
+### Compiling
 
 There are two scripts to facilitate compiling Wasm Doom:
 
@@ -21,7 +24,7 @@ There are two scripts to facilitate compiling Wasm Doom:
 ./scripts/build.sh
 ```
 
-## Running
+### Running
 
 Copy the shareware version of [doom1.wad][3] to [./src][9] (make sure it has the name doom1.wad)
 
@@ -40,7 +43,7 @@ Inspect [src/index.html][6] for startup details.
 
 Check our live multiplayer [demo][5] and [blog post][7].
 
-## stdout procotol
+### stdout procotol
 
 To show important messages coming from the game while it's running we send the following formatted stdout messages, which can be parsed in the web page running the wasm:
 
